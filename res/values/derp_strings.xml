@@ -151,4 +151,9 @@
     <string name="derpfest_customizations_summary">Where the broken stuff is placed</string>
     <string name="menu_key_derpfest">top_level_derpfest_customizations</string>
 
+    <!-- Per-app volume -->
+    <string name="app_volume">App volume</string>
+    <string name="app_volume_title">Per-app volume control</string>
+    <string name="app_volume_summary">Show per-app volume button into volume dialog</string>
+
 </resources>
