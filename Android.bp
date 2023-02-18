@@ -135,6 +135,7 @@ android_library {
         "VendorSupport-preference",
         "colorpickerview",
         "androidx.palette_palette",
+        "BlurView",
     ],
 
     plugins: [

@@ -32,6 +32,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.ApplicationInfoFlags;
 import android.content.pm.UserInfo;
 import android.content.res.Configuration;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Process;
@@ -42,6 +43,7 @@ import android.util.ArraySet;
 import android.util.FeatureFlagUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -81,6 +83,9 @@ import com.android.settingslib.Utils;
 import com.android.settingslib.core.lifecycle.HideNonSystemOverlayMixin;
 
 import com.google.android.setupcompat.util.WizardManagerHelper;
+
+import eightbitlab.com.blurview.BlurView;
+import eightbitlab.com.blurview.RenderScriptBlur;
 
 import java.net.URISyntaxException;
 import java.util.List;
@@ -255,6 +260,9 @@ public class SettingsHomepageActivity extends FragmentActivity implements
                         ? R.layout.settings_homepage_container_v2
                         : R.layout.settings_homepage_container);
 
+        View decorView = getWindow().getDecorView();
+        ViewGroup root = (ViewGroup) decorView.findViewById(android.R.id.content);
+
         mIsTwoPane = ActivityEmbeddingUtils.isAlreadyEmbedded(this);
 
         updateAppBarMinHeight();
@@ -268,6 +276,12 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         getLifecycle().addObserver(new HideNonSystemOverlayMixin(this));
         mCategoryMixin = new CategoryMixin(this);
         getLifecycle().addObserver(mCategoryMixin);
+
+        BlurView searchBarBlur = findViewById(R.id.search_bar_blur);
+        Drawable windowBackground = decorView.getBackground();
+
+        searchBarBlur.setupWith(root, new RenderScriptBlur(this))
+                .setFrameClearDrawable(windowBackground);
 
         final String highlightMenuKey = getHighlightMenuKey();
         // Only allow features on high ram devices.
