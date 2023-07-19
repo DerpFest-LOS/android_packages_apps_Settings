@@ -67,7 +67,7 @@ public class TapPreferenceController extends AbstractPreferenceController
         mSwitch = screen.findPreference(getPreferenceKey());
         mSwitch.setOnPreferenceClickListener(preference -> {
             final boolean enabled = Settings.Secure.getInt(mContext.getContentResolver(),
-                    Settings.Secure.DOZE_TAP_SCREEN_GESTURE, 1) == 1;
+                    Settings.Secure.DOZE_TAP_SCREEN_GESTURE, 0) == 1;
             Settings.Secure.putInt(mContext.getContentResolver(),
                     Settings.Secure.DOZE_TAP_SCREEN_GESTURE,
                     enabled ? 0 : 1);
@@ -93,7 +93,7 @@ public class TapPreferenceController extends AbstractPreferenceController
     @Override
     public void updateState(Preference preference) {
         final boolean enabled = Settings.Secure.getInt(mContext.getContentResolver(),
-                Settings.Secure.DOZE_TAP_SCREEN_GESTURE, 1) == 1;
+                Settings.Secure.DOZE_TAP_SCREEN_GESTURE, 0) == 1;
         setChecked(enabled);
     }
 
