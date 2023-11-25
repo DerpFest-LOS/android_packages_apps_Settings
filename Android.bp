@@ -75,6 +75,7 @@ android_library {
         "res-derp",
         "stub/ui/res",
         "DerpFestCustomizations/res",
+        "SettingsGoogle/res",
     ],
 
     static_libs: [
