@@ -20,8 +20,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/derpfest_card_side_margin"
-    android:layout_marginTop="@dimen/derpfest_vertical_padding"
-    android:layout_marginBottom="@dimen/derpfest_vertical_padding"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
     app:cardCornerRadius="@dimen/derpfest_card_radius"
     app:cardElevation="0dp">
 
@@ -38,21 +38,18 @@
         <LinearLayout 
             android:gravity="center" 
             android:layout_width="match_parent" 
-            android:layout_height="wrap_content" 
-            android:paddingVertical="@dimen/derpfest_cool_branding_half_height">
+            android:layout_height="wrap_content"
+            android:paddingVertical="24dp">
             
             <ImageView 
                 android:id="@+id/derp_branding_image" 
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:paddingStart="70dp"
-                android:paddingEnd="70dp"
+                android:layout_width="260dp"
+                android:layout_height="48dp"
                 android:src="@drawable/derp_branding_image"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" 
                 android:tint="?android:attr/colorAccent" />
+                
         </LinearLayout>
     </FrameLayout>
 </com.google.android.material.card.MaterialCardView>

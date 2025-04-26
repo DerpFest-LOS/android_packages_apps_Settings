@@ -19,8 +19,9 @@
     settings:keywords="@string/keywords_top_level_device_info">
 
     <!-- DerpFest Cool Branding -->
-    <androidx.preference.ListPreference
-        settings:layout="@layout/brand_header_about"
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="derpfest_branding_header"
+        android:layout="@layout/brand_header_about"
         android:selectable="false"/>
 
     <!-- Abput phone info header -->
