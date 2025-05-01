@@ -286,4 +286,11 @@
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Pixel animation</string>
     <string name="pixel_navbar_anim_summary">Toggle home button animation</string>
+
+    <!-- Lockscreen weather -->
+    <string name="lockscreen_weather_title">Weather</string>
+    <string name="lockscreen_weather_summary">Show weather information on lock screen</string>
+    <string name="lockscreen_weather_provider_none">None</string>
+    <string name="lockscreen_weather_provider_default">Default</string>
+
 </resources>

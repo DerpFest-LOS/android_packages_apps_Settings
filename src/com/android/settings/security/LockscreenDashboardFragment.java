@@ -33,6 +33,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
 
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
@@ -49,6 +50,9 @@ import com.android.settings.security.screenlock.LockScreenPreferenceController;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
+
+import org.derpfest.support.preferences.SystemSettingListPreference;
+import org.derpfest.support.preferences.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,10 +77,14 @@ public class LockscreenDashboardFragment extends DashboardFragment
     static final String KEY_ADD_USER_FROM_LOCK_SCREEN =
             "security_lockscreen_add_users_when_locked";
 
+    private static final String KEY_WEATHER_PROVIDER = "lockscreen_weather_provider";
+
     private AmbientDisplayConfiguration mConfig;
     private OwnerInfoPreferenceController mOwnerInfoPreferenceController;
     @VisibleForTesting
     ContentObserver mControlsContentObserver;
+
+    private SystemSettingSwitchPreference mWeatherProvider;
 
     @Override
     public int getMetricsCategory() {
@@ -96,6 +104,12 @@ public class LockscreenDashboardFragment extends DashboardFragment
                 R.string.locked_work_profile_notification_title);
         replaceEnterpriseStringTitle("security_setting_lock_screen_notif_work_header",
                 WORK_PROFILE_NOTIFICATIONS_SECTION_HEADER, R.string.profile_section_header);
+
+        PreferenceScreen screen = getPreferenceScreen();
+        mWeatherProvider = screen.findPreference(KEY_WEATHER_PROVIDER);
+        final int provider = Settings.System.getInt(
+                getContentResolver(), KEY_WEATHER_PROVIDER, 1);
+        mWeatherProvider.setChecked(provider == 1);
     }
 
     @Override
