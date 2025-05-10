@@ -315,6 +315,6 @@
     <string name="vpn_enforce_dns_summary">Disable the private DNS when connected to a VPN. It will restore upon disconnecting.</string>
 
     <!-- DerpFest maintainer -->
-    <string name="derpfest_summary">By</string>
+    <string name="derpfest_summary">By %s</string>
     <string name="derpfest_maintainer">Unofficial Maintainer</string>
 </resources>
