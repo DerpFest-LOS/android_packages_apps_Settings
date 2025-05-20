@@ -327,4 +327,8 @@
     <string name="ramping_ringer_no_silence_title">Skip silence</string>
     <string name="ramping_ringer_no_silence_summary_on">Start ramping right when ringing starts</string>
     <string name="ramping_ringer_no_silence_summary_off">Vibrate only for half of the duration before ramping</string>
+
+    <!-- IME button space -->
+    <string name="show_ime_space_title">Show IME button space</string>
+    <string name="show_ime_space_summary">Enable the input method quick switch feature to switch input methods or hide the on-screen keyboard from the feature bar at the bottom of the screen when typing</string>
 </resources>
