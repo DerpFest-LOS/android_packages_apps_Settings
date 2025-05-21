@@ -29,13 +29,6 @@
         android:summary="@string/show_navbar_hint_summary"
         android:defaultValue="true" />
 
-    <SwitchPreferenceCompat
-        android:key="keyboard_no_navigation_bar"
-        android:title="@string/keyboard_no_navigation_title"
-        android:summary="@string/keyboard_no_navigation_summary"
-        android:defaultValue="true"
-        settings:controller="com.android.settings.navigationbar.KeyboardNoNavigationBarController" />
-
     <PreferenceCategory
         android:key="assistant_gesture_category"
         android:persistent="false"
