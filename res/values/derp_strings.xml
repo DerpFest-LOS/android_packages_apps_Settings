@@ -316,7 +316,7 @@
 
     <!-- DerpFest maintainer -->
     <string name="derpfest_summary">Built by %s</string>
-    <string name="derpfest_maintainer">Unofficial Maintainer</string>
+    <string name="derpfest_maintainer">Alexander Brunswig</string>
 
     <!-- Ramping ringer -->
     <string name="unit_seconds">Second(s)</string>
