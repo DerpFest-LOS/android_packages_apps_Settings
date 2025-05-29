@@ -445,8 +445,7 @@ public class SettingsHomepageActivity extends FragmentActivity implements
             blurView.setupWith(rootView)
                     .setFrameClearDrawable(windowBackground)
                     .setBlurRadius(radius)
-                    .setBlurAutoUpdate(true)
-                    .setHasFixedTransformationMatrix(true);
+                    .setBlurAutoUpdate(true);
         }
     }
 
