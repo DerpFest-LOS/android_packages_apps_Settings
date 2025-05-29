@@ -277,12 +277,6 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         mCategoryMixin = new CategoryMixin(this);
         getLifecycle().addObserver(mCategoryMixin);
 
-        BlurView searchBarBlur = findViewById(R.id.search_bar_blur);
-        Drawable windowBackground = decorView.getBackground();
-
-        searchBarBlur.setupWith(root, new RenderScriptBlur(this))
-                .setFrameClearDrawable(windowBackground);
-
         final String highlightMenuKey = getHighlightMenuKey();
         // Only allow features on high ram devices.
         if (!getSystemService(ActivityManager.class).isLowRamDevice()) {
@@ -437,6 +431,18 @@ public class SettingsHomepageActivity extends FragmentActivity implements
                         .initSearchToolbar(this /* activity */, toolbarTwoPaneVersion,
                                 SettingsEnums.SETTINGS_HOMEPAGE);
             }
+        }
+
+        // Initialize BlurView
+        BlurView blurView = findViewById(R.id.search_bar_blur);
+        if (blurView != null) {
+            float radius = 20f;
+            View decorView = getWindow().getDecorView();
+            ViewGroup rootView = decorView.findViewById(android.R.id.content);
+            Drawable windowBackground = decorView.getBackground();
+            blurView.setupWith(rootView, new RenderScriptBlur(this))
+                    .setFrameClearDrawable(windowBackground)
+                    .setBlurRadius(radius);
         }
     }
 
