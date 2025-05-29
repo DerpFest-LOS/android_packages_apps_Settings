@@ -32,6 +32,7 @@
             android:id="@+id/search_bar_blur"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/blur_floating_bg"
             app:blurOverlayColor="@color/blur_floating_bg">
             <Toolbar
                 android:id="@+id/search_action_bar"

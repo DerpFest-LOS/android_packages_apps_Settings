@@ -436,13 +436,17 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         // Initialize BlurView
         BlurView blurView = findViewById(R.id.search_bar_blur);
         if (blurView != null) {
-            float radius = 20f;
+            float radius = 30f;
             View decorView = getWindow().getDecorView();
             ViewGroup rootView = decorView.findViewById(android.R.id.content);
             Drawable windowBackground = decorView.getBackground();
-            blurView.setupWith(rootView, new RenderScriptBlur(this))
+            
+            // Use a more modern blur implementation
+            blurView.setupWith(rootView)
                     .setFrameClearDrawable(windowBackground)
-                    .setBlurRadius(radius);
+                    .setBlurRadius(radius)
+                    .setBlurAutoUpdate(true)
+                    .setHasFixedTransformationMatrix(true);
         }
     }
 
