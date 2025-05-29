@@ -35,6 +35,7 @@ import com.android.settings.display.ThemePreferenceController;
 import com.android.settings.display.ForceDarkPreferenceController;
 import com.android.settings.display.VrDisplayPreferenceController;
 import com.android.settings.display.EmulateDisplayCutoutPreferenceController;
+import com.android.settings.display.DesktopModePreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
@@ -75,7 +76,14 @@ public class DisplaySettings extends DashboardFragment {
 
     @Override
     protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
-        return buildPreferenceControllers(context, getSettingsLifecycle());
+        final List<AbstractPreferenceController> controllers = buildPreferenceControllers(context, getSettingsLifecycle());
+        // Set host fragment for controllers that need it
+        for (AbstractPreferenceController controller : controllers) {
+            if (controller instanceof DesktopModePreferenceController) {
+                ((DesktopModePreferenceController) controller).setHostFragment(this);
+            }
+        }
+        return controllers;
     }
 
     @Override
@@ -96,6 +104,7 @@ public class DisplaySettings extends DashboardFragment {
         controllers.add(new EmulateDisplayCutoutPreferenceController(context));
         controllers.add(new ForceDarkPreferenceController(context));
         controllers.add(new BrightnessLevelPreferenceController(context, lifecycle));
+        controllers.add(new DesktopModePreferenceController(context));
         return controllers;
     }
 

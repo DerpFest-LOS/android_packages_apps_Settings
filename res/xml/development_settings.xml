@@ -734,10 +734,6 @@
             android:summary="@string/force_resizable_activities_summary" />
 
         <SwitchPreferenceCompat
-            android:key="override_desktop_mode_features"
-            android:title="@string/enable_desktop_mode" />
-
-        <SwitchPreferenceCompat
             android:key="enable_freeform_support"
             android:title="@string/enable_freeform_support" />
 
