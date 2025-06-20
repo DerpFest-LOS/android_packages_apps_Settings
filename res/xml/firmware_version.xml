@@ -50,7 +50,7 @@
     <!-- Security patch -->
     <Preference
         android:key="security_key"
-        android:title="@string/security_patch"
+        android:title="@string/aosp_security_patch"
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.SecurityPatchLevelPreferenceController"/>
 
