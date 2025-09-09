@@ -131,6 +131,7 @@ public class LockscreenDashboardFragment extends DashboardFragment
         }
         use(AmbientDisplayNotificationsPreferenceController.class).setConfig(getConfig(context));
         use(DozeOnChargePreferenceController.class).setConfig(getConfig(context));
+        use(DoubleTapScreenPreferenceController.class).setConfig(getConfig(context));
         use(PickupGesturePreferenceController.class).setConfig(getConfig(context));
         use(PulseOnNewTracksPreferenceController.class).setConfig(getConfig(context));
         use(AODSchedulePreferenceController.class).setConfig(getConfig(context));

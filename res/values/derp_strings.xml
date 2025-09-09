@@ -371,13 +371,4 @@
     <string name="cycle_type_weekly_sub">Day of each week:\n1 = Monday</string>
     <string name="cycle_type_daily_title">Usage cycle reset hour</string>
     <string name="cycle_type_daily_sub">Hour of each day:</string>
-
-    <!-- wake gestures haptics -->
-    <string name="doze_gesture_vibrate_title">Haptic Feedback</string>
-    <string name="doze_gesture_vibrate_summary">Vibrate when this gesture is invoked</string>
-
-    <!-- wake gestures on AOD -->
-    <string name="doze_gesture_allow_ambient_title">Allow on Ambient</string>
-    <string name="doze_gesture_allow_ambient_summary">Allow this gesture to work on always on and ambient display</string>
-
 </resources>
